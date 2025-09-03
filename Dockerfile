@@ -3,8 +3,8 @@ WORKDIR /App
 
 COPY . ./
 ARG TARGETARCH
-RUN dotnet restore -a
-RUN dotnet publish -a -c Release -o out
+RUN dotnet restore CarCareTracker/CarCareTracker.csproj
+RUN dotnet publish -c Release -o out CarCareTracker/CarCareTracker.csproj
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /App
