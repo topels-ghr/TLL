@@ -3,8 +3,8 @@ WORKDIR /App
 
 COPY . ./
 ARG TARGETARCH
-RUN dotnet restore -a $TARGETARCH
-RUN dotnet publish -a $TARGETARCH -c Release -o out
+RUN dotnet restore -a
+RUN dotnet publish -a -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /App
